@@ -2,31 +2,31 @@ react-test:
   fullnameOverride: react-test
   image:
     repository: ghcr.io/conaniskenan/react-test
-    tag: main
+    tag: 8ea3c27
   imagePullSecrets:
-  - name: react-test-docker
+    - name: react-test-docker
   ingress:
     className: nginx
     enabled: true
     hosts:
-    - host: react-test-l7eblu9iw.forkmain.cloud
-      paths:
-      - path: /
-        pathType: ImplementationSpecific
+      - host: react-test-l7eblu9iw.forkmain.cloud
+        paths:
+          - path: /
+            pathType: ImplementationSpecific
   nocalhost:
     command:
       debug:
-      - yarn
-      - install
-      - '&&'
-      - yarn
-      - dev
+        - yarn
+        - install
+        - '&&'
+        - yarn
+        - dev
       run:
-      - yarn
-      - install
-      - '&&'
-      - yarn
-      - dev
+        - yarn
+        - install
+        - '&&'
+        - yarn
+        - dev
     configPath: conf/nocalhost.yaml
     env: null
     gitURL: https://github.com/conaniskenan/react-test.git
@@ -35,8 +35,8 @@ react-test:
     language: javascript
     patches: null
     persistentVolumeDirs:
-    - capacity: 20Gi
-      path: /home/nocalhost-dev
+      - capacity: 20Gi
+        path: /home/nocalhost-dev
     remoteDebugPort: 9009
   service:
     port: 3000
